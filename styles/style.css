@@ -1,0 +1,124 @@
+/*EMMA MIDDELKOOP 19104251*/
+/*MOBILE FIRST*/
+body {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	background: black;
+	margin: 3%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 20px; /*(top bottom)*/
+	grid-column-gap: 10px; /*(Left Right)*/
+	grid-template-areas: 
+	"logo"
+	"grafiek3"
+	"grafiek2"
+	"grafiek1"
+	"informatie"
+	"elon"
+	"grafiek4";
+}
+
+.logo {
+	grid-area: logo;
+	
+}
+
+.grafiek1 {
+	grid-area: grafiek1;
+}
+
+.grafiek2 {
+	grid-area: grafiek2;
+}
+
+.grafiek3 {
+	grid-area: grafiek3;
+}
+
+.informatie {
+	grid-area: informatie;
+}
+
+.elon {
+	grid-area: elon;
+	border-radius: 10px;
+}
+
+.grafiek4 {
+	grid-area: grafiek4;
+}
+
+/*STYLING*/
+
+img {
+	max-width: 100%;
+}
+
+/*/*IPAD*//*IPAD*//*IPAD*//*IPAD*//*IPAD*/
+@media only screen and (min-width: 640px) {
+
+	body {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: 
+		"logo			logo"
+		"grafiek1		grafiek2"
+		"grafiek3 		grafiek3"
+		"informatie  	elon"
+		"grafiek4 		grafiek4";
+	}
+
+	.logo {
+		margin-left: 50%;
+	}
+
+	.elon {
+		margin-top: 20%;
+	}
+
+	.elon figure {
+		margin: 0;
+	}
+
+}
+
+/*LAPTOP*//*LAPTOP*//*LAPTOP*//*LAPTOP*//*LAPTOP*//*LAPTOP*/
+@media only screen and (min-width: 940px) {
+
+	body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-areas: 
+		"logo			logo		logo			-			-			-"
+		"grafiek1		grafiek1	grafiek2		grafiek2	grafiek3	grafiek3"
+		"informatie  	informatie	informatie		elon		elon		elon"
+		"grafiek4		grafiek4	grafiek4		elon		elon		elon";
+	}
+
+	.logo {
+		margin-left: 0;
+	}
+
+	.grafiek1, .grafiek2, .grafiek3 {
+			max-width: 100%;
+	}
+
+	.grafiek4 {
+		max-width: 70%;
+	}
+
+	.elon {
+		margin-top: 20%;
+	}
+
+
+}
+
+
+/*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*//*DESKTOP*/
+@media only screen and (min-width: 2020px) {
+	body {
+		max-width: 1600px;
+		margin: auto;
+	}
