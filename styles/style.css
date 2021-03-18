@@ -6,17 +6,20 @@ body {
 	background: black;
 	margin: 3%;
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-row-gap: 20px; /*(top bottom)*/
 	grid-column-gap: 10px; /*(Left Right)*/
 	grid-template-areas: 
-	"logo"
-	"grafiek3"
-	"grafiek2"
-	"grafiek1"
-	"informatie"
-	"elon"
-	"grafiek4";
+	"logo				logo"
+	"datum				datum"
+	"tijd				houston"
+	"dagnacht			dagnacht"
+	/*"grafiek3			grafiek3"
+	"grafiek2			grafiek2"
+	"grafiek1			grafiek2"
+	"informatie			informatie"
+	"elon				elon"
+	"grafiek4			grafiek4"*/;
 }
 
 .logo {
@@ -24,7 +27,42 @@ body {
 	
 }
 
-.grafiek1 {
+.datum {
+	grid-area: datum;
+	font-size: 3em;
+}
+
+.tijd {
+	grid-area: tijd;
+	font-size: 1.5em;
+	padding: 5%;
+	border: 3px solid white;
+	border-radius: 10px;
+}
+
+.houston {
+	grid-area: houston;
+	font-size: 1.5em;
+	padding: 5%;
+	border: 3px solid white;
+	border-radius: 10px;
+}
+
+.hamham {
+	grid-area: dagnacht;
+	margin: 10%;
+	animation: hamham 3s infinite;
+}
+
+@keyframes hamham {
+	0% {transform: rotate(-40deg);}
+	25% {transform: rotate(0deg);}
+	50% {transform: rotate(40deg);}
+	75% {transform: rotate(0deg);}
+	100% {transform: rotate(-40deg);}
+}
+
+/*.grafiek1 {
 	grid-area: grafiek1;
 }
 
@@ -47,7 +85,7 @@ body {
 
 .grafiek4 {
 	grid-area: grafiek4;
-}
+}*/
 
 /*STYLING*/
 
@@ -62,16 +100,16 @@ img {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: 
+		"dagnacht		dagnacht"
+		"datum			datum"
+		"tijd			houston"
 		"logo			logo"
-		"grafiek1		grafiek2"
+		/*"grafiek1		grafiek2"
 		"grafiek3 		grafiek3"
 		"informatie  	elon"
-		"grafiek4 		grafiek4";
+		"grafiek4 		grafiek4"*/;
 	}
 
-	.logo {
-		margin-left: 50%;
-	}
 
 	.elon {
 		margin-top: 20%;
@@ -88,16 +126,19 @@ img {
 
 	body {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-areas: 
-		"logo			logo		logo			-			-			-"
-		"grafiek1		grafiek1	grafiek2		grafiek2	grafiek3	grafiek3"
+		"logo			logo		dagnacht	dagnacht"
+		"tijd			houston		dagnacht	dagnacht"
+		"datum			datum		datum		datum"
+		/*"grafiek1		grafiek1	grafiek2		grafiek2	grafiek3	grafiek3"
 		"informatie  	informatie	informatie		elon		elon		elon"
-		"grafiek4		grafiek4	grafiek4		elon		elon		elon";
+		"grafiek4		grafiek4	grafiek4		elon		elon		elon"*/;
 	}
 
 	.logo {
 		margin-left: 0;
+		max-width: 50%;
 	}
 
 	.grafiek1, .grafiek2, .grafiek3 {

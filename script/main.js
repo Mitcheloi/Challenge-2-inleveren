@@ -1,3 +1,71 @@
+// VERANDERENDE AFBEELDING
+
+function dagTijd() {
+    var date = new Date();
+    var img = document.getElementById('zonStand');
+
+
+    if      (date.getHours() <= 6){
+            img.src = 'afbeeldingen/cycles_night.svg'
+    }
+    else if (date.getHours() <= 12){
+            img.src = 'afbeeldingen/cycles_morning.svg'
+    } 
+    else if (date.getHours() <= 18){
+            img.src = 'afbeeldingen/cycles_day.svg'
+    }
+    else                          {
+            img.src = 'afbeeldingen/cycles_evening.svg'
+        }
+    }
+
+// ONZE TIJDZONE
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('tijd').innerHTML =
+    h + ':' + m + ':' + s + ' ' + 'GMT+1';
+
+// HOUSTON TIJDZONE
+    var hh = today.getHours();
+    hh = hh - 6;
+    if (hh < 0){
+        hh = hh + 24;
+    }
+    document.getElementById('houston').innerHTML =
+    hh + ':' + m + ':' + s + ' ' + 'GMT-5';
+    var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) { i = '0' + i};
+    return i;
+}
+
+// HUIDIGE DATUM
+function startDate() {
+var currentDate = new Date();
+var day = currentDate.getDate();
+var month = currentDate.getMonth() + 1;
+var year = currentDate.getFullYear();
+document.getElementById('datum').innerHTML =
+ day + '-' + month + '-' + year;
+}
+
+// AANROEPEN VAN ALLE FUNCTIES
+function start(){
+    dagTijd();
+    startTime();
+    checkTime();
+    startDate();
+}
+
+
+
 Chart.defaults.global.defaultFontColor = "#fff";
 
 var ctx = document.getElementById('lijnGrafiek').getContext('2d');
